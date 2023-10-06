@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro; 
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -60,26 +56,32 @@ public class PlayerMove : MonoBehaviour
         }
 
         // 횃불 찾기
-        if (Input.GetButtonDown("Jump") && scanObject != null  && scanObject.layer == LayerMask.NameToLayer("object")) {
+        if (Input.GetButtonDown("Jump") && scanObject != null && scanObject.layer == LayerMask.NameToLayer("object"))
+        {
             // 횃불을 찾았을 때 동작
-            litTorches++; // 켜진 횃불 개수 증가
-            // 남은 횃불 개수 갱신
-            UpdateTorchCountText();
-            Light2D[] torchLights = scanObject.GetComponentsInChildren<Light2D>();
-            foreach (Light2D torchLight in torchLights) {
-                if (torchLight.gameObject.name == "Light2D") {
-                    // Intensity를 1로 설정하여 빛을 활성화
-                    torchLight.intensity = 1f;
+            TorchController torchController = scanObject.GetComponent<TorchController>();
+            if (torchController != null && !torchController.IsInteracted())
+            {
+                // 아직 상호 작용하지 않은 횃불인 경우에만 동작
+                litTorches++; // 켜진 횃불 개수 증가
+
+                // TorchController 스크립트를 사용하여 횃불을 활성화
+                torchController.ActivateTorch();
+
+                // 횃불 상호 작용 플래그 설정
+                torchController.SetInteracted(true);
+
+                // 남은 횃불 개수 갱신
+                UpdateTorchCountText();
+
+                // 모든 횃불을 찾았으면 게임 클리어 처리
+                if (litTorches >= totalTorches)
+                {
+                    // 게임 클리어 씬으로 전환 (SceneManager.LoadScene 사용)
+                    GameClear();
                 }
-            }
 
-            scanObject = null; // scanObject 초기화
-
-
-            // 모든 횃불을 찾았으면 게임 클리어 처리
-            if (litTorches >= totalTorches) {
-                // 게임 클리어 씬으로 전환 (SceneManager.LoadScene 사용)
-                GameClear();
+                scanObject = null; // scanObject 초기화
             }
         }
     }
