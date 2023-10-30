@@ -30,9 +30,9 @@ public class PlayerStamina : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) {
-            Debug.Log("F");
-            ToggleLight(); // F 키를 누르면 Light2D를 토글
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Debug.Log("R");
+            ToggleLight(); // R 키를 누르면 Light2D를 토글
             
         }
 
