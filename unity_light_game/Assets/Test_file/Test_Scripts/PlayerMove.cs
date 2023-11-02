@@ -119,7 +119,7 @@ public class PlayerMove : MonoBehaviour
     // 남은 횃불 수를 업데이트하는 함수
     void UpdateTorchCountText()
     {
-        torchCountText.text = $"남은 Torch: {totalTorches - litTorches}";
+        //torchCountText.text = $"남은 Torch: {totalTorches - litTorches}";
     }
 
     // 게임 클리어시 실행되는 함수
