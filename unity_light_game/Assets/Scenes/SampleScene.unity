@@ -2385,6 +2385,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3033002058111286395, guid: f9d9b7d9149663948bb9e8ccf02c1a76, type: 3}
+      propertyPath: runMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033002058111286395, guid: f9d9b7d9149663948bb9e8ccf02c1a76, type: 3}
       propertyPath: torchCountText
       value: 
       objectReference: {fileID: 1268761436}

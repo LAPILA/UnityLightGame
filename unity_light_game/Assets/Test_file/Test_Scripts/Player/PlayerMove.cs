@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
 {
     // 플레이어 이동에 필요한 변수들
     public float Speed;
-    public float runMultiplier = 1.5f; // 달릴 때의 속도 배율
+    public float runMultiplier = 2f; // 달릴 때의 속도 배율
     private Rigidbody2D rigid;
     private Animator animator;
     private float h;
@@ -29,7 +29,8 @@ public class PlayerMove : MonoBehaviour
     private float stamina = 5f;
     private float currentStamina;
     private float staminaRecoveryDelay = 1f; // 스테미나가 다 떨어진 후 회복까지의 시간
-    private float quickRecoveryRate = 0.2f; // 빠른 회복율
+    private float staminaBurnRate = 1f; // 달리기 시 스테미나 소모율
+    private float staminaRecoveryRate = 0.2f; // 스테미나 회복율
     private bool isRunning = false;
     private float lastTimeRunning;
 
@@ -51,17 +52,7 @@ public class PlayerMove : MonoBehaviour
         v = Input.GetAxisRaw("Vertical");
         dirVec = new Vector3(h, v, 0).normalized;
 
-        // 달리기와 스테미나 소모
-        isRunning = Input.GetKey(KeyCode.LeftShift) && currentStamina > 0;
-        if (isRunning) {
-            dirVec *= runMultiplier;
-            UseStamina(Time.deltaTime);
-            lastTimeRunning = Time.time;
-        }
-        else if (Time.time > lastTimeRunning + staminaRecoveryDelay) {
-            RecoverStamina(quickRecoveryRate * Time.deltaTime);
-        }
-
+        UpdateRunningStatus();
         UpdateAnimation();
         FlipCharacter();
         if (h != 0 || v != 0) // 움직임이 있는 경우에만 dirVec를 업데이트
@@ -81,8 +72,34 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         // 캐릭터 이동
-        rigid.velocity = dirVec * Speed;
+        rigid.velocity = dirVec * (isRunning ? Speed * runMultiplier : Speed);
         DetectObjects();
+    }
+    void UpdateRunningStatus()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0) {
+            StartRunning();
+        }
+        else {
+            StopRunning();
+        }
+
+        // 스테미나 회복
+        if (!isRunning && Time.time > lastTimeRunning + staminaRecoveryDelay) {
+            RecoverStamina(staminaRecoveryRate * Time.deltaTime);
+        }
+    }
+    void StartRunning()
+    {
+        isRunning = true;
+        UseStamina(staminaBurnRate * Time.deltaTime);
+        lastTimeRunning = Time.time; // 스테미나 회복 지연 시간을 위해 마지막 달린 시간 갱신
+    }
+
+    // 달리기 중단하는 함수
+    void StopRunning()
+    {
+        isRunning = false;
     }
 
     // 스테미나를 사용하는 함수

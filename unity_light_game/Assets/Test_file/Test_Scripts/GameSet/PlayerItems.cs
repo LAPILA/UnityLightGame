@@ -25,14 +25,16 @@ public class PlayerItems : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             UseBread();
         }
-        else if (Time.time > glowBagCooldownTime) {
+
+        if (Time.time > glowBagCooldownTime) {
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 StartCoroutine(UseGlowBag());
                 // 현재 시간에 쿨타임을 더해 다음 사용 가능 시간을 업데이트
                 glowBagCooldownTime = Time.time + glowBagCooldown;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
             PlaceBeacon();
         }
     }
