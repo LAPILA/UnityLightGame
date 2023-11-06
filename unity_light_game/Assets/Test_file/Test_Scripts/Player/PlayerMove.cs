@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     private float v;
     private Vector3 dirVec;
     private GameObject scanObject;
+    private Vector3 lastMoveDir;
 
     // 횃불 개수에 관련된 변수들
     public TextMeshProUGUI torchCountText;
@@ -61,11 +62,18 @@ public class PlayerMove : MonoBehaviour
 
         UpdateAnimation();
         FlipCharacter();
+        if (h != 0 || v != 0) // 움직임이 있는 경우에만 dirVec를 업데이트
+    {
+            dirVec = new Vector3(h, v, 0).normalized;
+            lastMoveDir = dirVec; // 플레이어가 움직이는 동안에는 이 방향을 계속 갱신
+        }
+        DetectObjects();
 
         // 횃불과 상호작용
         if (Input.GetKeyDown(KeyCode.Space) && detectedTorch != null) {
             detectedTorch.ActivateTorch();
         }
+
     }
 
     private void FixedUpdate()
@@ -145,8 +153,10 @@ public class PlayerMove : MonoBehaviour
     // 오브젝트를 탐지하는 함수
     void DetectObjects()
     {
-        Debug.DrawRay(rigid.position, dirVec * 0.2f, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.2f, LayerMask.GetMask("object"));
+        Vector3 scanDir = dirVec == Vector3.zero ? lastMoveDir : dirVec; // dirVec가 0이면 lastMoveDir 사용
+        Debug.DrawRay(rigid.position, scanDir * 0.2f, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, scanDir, 0.2f, LayerMask.GetMask("object"));
+
 
         if (rayHit.collider != null) {
             scanObject = rayHit.collider.gameObject;
