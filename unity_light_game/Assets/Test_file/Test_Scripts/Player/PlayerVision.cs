@@ -39,12 +39,12 @@ public class PlayerVision : MonoBehaviour
     void UpdateVision()
     {
         // 등불을 하나 켰을 때 innerRadius와 outerRadius를 0.1씩 줄입니다.
-        //float newInnerRadius = playerLight.pointLightInnerRadius - 0.1f;
-        //float newOuterRadius = playerLight.pointLightOuterRadius - 0.1f;
+        float newInnerRadius = playerLight.pointLightInnerRadius - 0.1f;
+        float newOuterRadius = playerLight.pointLightOuterRadius - 0.1f;
 
         // 새로운 Radius 값을 설정합니다.
-        //playerLight.pointLightInnerRadius = newInnerRadius;
-        //playerLight.pointLightOuterRadius = newOuterRadius;
+        playerLight.pointLightInnerRadius = newInnerRadius;
+        playerLight.pointLightOuterRadius = newOuterRadius;
     }
 
 }

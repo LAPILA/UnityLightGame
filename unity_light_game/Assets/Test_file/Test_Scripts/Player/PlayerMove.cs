@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // 스크롤바를 위해 필요
@@ -31,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     private float quickRecoveryRate = 0.2f; // 빠른 회복율
     private bool isRunning = false;
     private float lastTimeRunning;
+
 
     void Awake()
     {
@@ -71,7 +73,7 @@ public class PlayerMove : MonoBehaviour
 
         // 횃불과 상호작용
         if (Input.GetKeyDown(KeyCode.Space) && detectedTorch != null) {
-            detectedTorch.ActivateTorch();
+            InteractWithTorch();
         }
 
     }
@@ -83,24 +85,6 @@ public class PlayerMove : MonoBehaviour
         DetectObjects();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // 횃불과의 상호작용
-        if (collision.gameObject.layer == LayerMask.NameToLayer("object")) {
-            detectedTorch = collision.gameObject.GetComponent<TorchController>();
-            if (detectedTorch != null && !detectedTorch.IsInteracted()) {
-                detectedTorch.ActivateTorch();
-                detectedTorch.SetInteracted(true);
-                litTorches++;
-                UpdateTorchCountText();
-                if (PlayerVision.Instance != null) {
-                    PlayerVision.Instance.LightTorch();
-                }
-                if (litTorches >= totalTorches) GameClear();
-            }
-        }
-    }
-
     // 스테미나를 사용하는 함수
     void UseStamina(float amount)
     {
@@ -110,7 +94,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // 스테미나를 회복하는 함수
-    void RecoverStamina(float amount)
+    public void RecoverStamina(float amount)
     {
         currentStamina += amount;
         currentStamina = Mathf.Clamp(currentStamina, 0, stamina);
@@ -127,7 +111,7 @@ public class PlayerMove : MonoBehaviour
     // 남은 횃불 수를 업데이트하는 함수
     void UpdateTorchCountText()
     {
-        //torchCountText.text = $"남은 Torch: {totalTorches - litTorches}";
+        torchCountText.text = $"남은 Torch: {totalTorches - litTorches}";
     }
 
     // 게임 클리어시 실행되는 함수
@@ -153,18 +137,38 @@ public class PlayerMove : MonoBehaviour
     // 오브젝트를 탐지하는 함수
     void DetectObjects()
     {
-        Vector3 scanDir = dirVec == Vector3.zero ? lastMoveDir : dirVec; // dirVec가 0이면 lastMoveDir 사용
+        Vector3 scanDir = dirVec == Vector3.zero ? lastMoveDir : dirVec;
         Debug.DrawRay(rigid.position, scanDir * 0.2f, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, scanDir, 0.2f, LayerMask.GetMask("object"));
 
-
         if (rayHit.collider != null) {
             scanObject = rayHit.collider.gameObject;
-            detectedTorch = scanObject.GetComponent<TorchController>();
+
+            // 토치 객체 탐지 로직
+            TorchController hitTorch = scanObject.GetComponent<TorchController>();
+            if (hitTorch != null && !hitTorch.IsInteracted()) {
+                detectedTorch = hitTorch;
+            }
         }
         else {
-            scanObject = null;
             detectedTorch = null;
         }
     }
+
+    void InteractWithTorch()
+    {
+        if (detectedTorch != null && !detectedTorch.IsInteracted()) {
+            detectedTorch.ActivateTorch();
+            detectedTorch.SetInteracted(true);
+            litTorches++;
+            UpdateTorchCountText();
+            if (PlayerVision.Instance != null) {
+                PlayerVision.Instance.LightTorch();
+            }
+            if (litTorches >= totalTorches) {
+                GameClear();
+            }
+        }
+    }
+
 }

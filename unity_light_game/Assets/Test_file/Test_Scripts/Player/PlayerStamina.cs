@@ -37,7 +37,6 @@ public class PlayerStamina : MonoBehaviour
         }
 
     }
-
     private void ToggleLight()
     {
         isLightOn = !isLightOn; // Light2D 상태를 토글
@@ -45,28 +44,24 @@ public class PlayerStamina : MonoBehaviour
 
         // 스태미나 감소 Coroutine을 중지
         if (staminaDecreaseCoroutine != null) {
-            Debug.Log("스태미나 감소 중지");
             StopCoroutine(staminaDecreaseCoroutine);
             isDecreasing = false; // 감소 중인 상태를 해제
         }
 
         // 스태미나 회복 Coroutine을 중지
         if (staminaIncreaseCoroutine != null) {
-            Debug.Log("스태미나 회복 중지");
             StopCoroutine(staminaIncreaseCoroutine);
         }
 
         if (isLightOn) {
             // Light2D가 켜진 경우 스태미나 감소 루틴을 시작
             if (!isDecreasing) {
-                Debug.Log("감소 중");
                 staminaDecreaseCoroutine = StartCoroutine(StaminaDecreaseRoutine());
                 isDecreasing = true; // 감소 중인 상태 설정
             }
         }
         else if (!isDecreasing) {
             // Light2D가 꺼진 경우 스태미나 회복 루틴을 시작 (감소 중이 아닌 경우에만)
-            Debug.Log("회복중");
             staminaIncreaseCoroutine = StartCoroutine(StaminaIncreaseRoutine());
         }
     }
