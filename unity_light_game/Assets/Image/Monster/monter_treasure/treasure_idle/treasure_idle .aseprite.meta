@@ -1,0 +1,724 @@
+fileFormatVersion: 2
+guid: 99132343267fa344ca603451023e168f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: treasure_idle _Frame_0
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 4
+      width: 21
+      height: 17
+    spriteID: c8428aca667594a4182ac4507cc26ac9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 4}
+  - name: treasure_idle _Frame_1
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 29
+      width: 21
+      height: 17
+    spriteID: dc6e71dfefff7d845957c3ad2d0796e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 29}
+  - name: treasure_idle _Frame_2
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 200
+      width: 21
+      height: 18
+    spriteID: a7c6790e7619a1e4fa2aea43c0417098
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 200}
+  - name: treasure_idle _Frame_3
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 21
+      height: 20
+    spriteID: bc186c47461ab3848b990e95f027daf6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: treasure_idle _Frame_4
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 32
+      width: 21
+      height: 20
+    spriteID: 7c1576aa570bc574e9b4cecb4c30bd60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 32}
+  - name: treasure_idle _Frame_5
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 21
+      height: 20
+    spriteID: ebecf98eb8061464fa1752fd56fc9150
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
+  - name: treasure_idle _Frame_6
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 88
+      width: 21
+      height: 20
+    spriteID: 3ccb7824aa921854ba9d53bec7c2daf2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 88}
+  - name: treasure_idle _Frame_7
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 21
+      height: 20
+    spriteID: fae080af0fd19f0458d0933eefa5970b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: treasure_idle _Frame_8
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 21
+      height: 20
+    spriteID: b95666ff5e27bfe4db00847c245707b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 144}
+  - name: treasure_idle _Frame_9
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 21
+      height: 20
+    spriteID: ba7c07e793120c44883e6d9d14a12441
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: treasure_idle _Frame_10
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 200
+      width: 21
+      height: 20
+    spriteID: 5d5b7e7354f377641be13248dd5f15c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 200}
+  - name: treasure_idle _Frame_11
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 21
+      height: 20
+    spriteID: e68e0f2b5ba3a3a48b29e2f556c6e732
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
+  - name: treasure_idle _Frame_12
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 4
+      width: 21
+      height: 20
+    spriteID: 139862eea4ff4d247912a79cd5644127
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 4}
+  - name: treasure_idle _Frame_13
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 32
+      width: 21
+      height: 20
+    spriteID: e2ef3ca91cf0d024b8cb80974c44e19f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 32}
+  - name: treasure_idle _Frame_14
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 60
+      width: 21
+      height: 20
+    spriteID: 05715091a31967c41b421726e93cbc9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 60}
+  - name: treasure_idle _Frame_15
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 88
+      width: 21
+      height: 20
+    spriteID: 1a431b66d27fc1c44a7ea08295f35148
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 88}
+  - name: treasure_idle _Frame_16
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 116
+      width: 21
+      height: 20
+    spriteID: 624c3fb58762bf340bbc8933df4945b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 116}
+  - name: treasure_idle _Frame_17
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 144
+      width: 21
+      height: 20
+    spriteID: c43911ebea9961d488de735a0416a388
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 144}
+  - name: treasure_idle _Frame_18
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 172
+      width: 21
+      height: 20
+    spriteID: cc127b4dfed818d4aafa06a691c16ef0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 172}
+  - name: treasure_idle _Frame_19
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 226
+      width: 21
+      height: 18
+    spriteID: 33442c6511ee2a743a4db3dfe659bea7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 226}
+  - name: treasure_idle _Frame_20
+    originalName: 
+    pivot: {x: 0.52380955, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 54
+      width: 21
+      height: 17
+    spriteID: 6ba2a71d0f7dd654fa4ba72cf28cc482
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 54}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1253836338
+    name: 'treasure_idle '
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: treasure_idle _Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 17
+      spriteId: c8428aca667594a4182ac4507cc26ac9
+    - name: treasure_idle _Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 17
+      spriteId: dc6e71dfefff7d845957c3ad2d0796e1
+    - name: treasure_idle _Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 18
+      spriteId: a7c6790e7619a1e4fa2aea43c0417098
+    - name: treasure_idle _Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: bc186c47461ab3848b990e95f027daf6
+    - name: treasure_idle _Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 7c1576aa570bc574e9b4cecb4c30bd60
+    - name: treasure_idle _Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: ebecf98eb8061464fa1752fd56fc9150
+    - name: treasure_idle _Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 3ccb7824aa921854ba9d53bec7c2daf2
+    - name: treasure_idle _Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: fae080af0fd19f0458d0933eefa5970b
+    - name: treasure_idle _Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: b95666ff5e27bfe4db00847c245707b3
+    - name: treasure_idle _Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: ba7c07e793120c44883e6d9d14a12441
+    - name: treasure_idle _Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 5d5b7e7354f377641be13248dd5f15c7
+    - name: treasure_idle _Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: e68e0f2b5ba3a3a48b29e2f556c6e732
+    - name: treasure_idle _Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 139862eea4ff4d247912a79cd5644127
+    - name: treasure_idle _Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: e2ef3ca91cf0d024b8cb80974c44e19f
+    - name: treasure_idle _Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 05715091a31967c41b421726e93cbc9c
+    - name: treasure_idle _Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 1a431b66d27fc1c44a7ea08295f35148
+    - name: treasure_idle _Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: 624c3fb58762bf340bbc8933df4945b4
+    - name: treasure_idle _Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: c43911ebea9961d488de735a0416a388
+    - name: treasure_idle _Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 20
+      spriteId: cc127b4dfed818d4aafa06a691c16ef0
+    - name: treasure_idle _Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 18
+      spriteId: 33442c6511ee2a743a4db3dfe659bea7
+    - name: treasure_idle _Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 5
+        y: 0
+        width: 21
+        height: 17
+      spriteId: 6ba2a71d0f7dd654fa4ba72cf28cc482
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 32, y: 48}

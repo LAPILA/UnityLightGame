@@ -8,6 +8,7 @@ TagManager:
   - GameOver
   - Panel
   - item
+  - TorchLight
   layers:
   - Default
   - TransparentFX

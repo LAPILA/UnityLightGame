@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9023962102053412255}
   - component: {fileID: 1614271322037394981}
   - component: {fileID: 5824451690624770964}
+  - component: {fileID: 5461155405936847785}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2355498924928768652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.316, y: 0.492, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -234,6 +235,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLight: {fileID: 1357118982771488851}
   totalTorches: 8
+--- !u!114 &5461155405936847785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355498924928768652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e4b3bd3bde4654fa261ecc97e1af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowBagDuration: 10
+  glowBagCooldown: 10
+  beaconPrefab: {fileID: 5296408763007578935, guid: effb8e3023a4a0742a6490a44f0f20c0, type: 3}
+  playerMove: {fileID: 3033002058111286395}
+  playerVision: {fileID: 5824451690624770964}
+  breadSprite: {fileID: 21300000, guid: 8572701b6b7b29e46961009dc4ececb7, type: 3}
+  glowBagSprite: {fileID: 21300000, guid: 38b9d5324da699048b0fa6502a65c981, type: 3}
+  beaconSprite: {fileID: -1602209818, guid: da0d235fadf34254d97118b324c6b532, type: 3}
+  itemImageUI: {fileID: 0}
+  itemCountUI: {fileID: 0}
 --- !u!1 &2417421424717403992
 GameObject:
   m_ObjectHideFlags: 0

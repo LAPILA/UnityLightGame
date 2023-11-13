@@ -6,11 +6,14 @@ public class TorchController : MonoBehaviour
 {
     private Light2D torchLight;
     private bool interacted = false;
+    private CircleCollider2D torchCollider;
 
     private void Start()
     {
         torchLight = GetComponentInChildren<Light2D>();
         torchLight.intensity = 0f;
+        torchCollider = GetComponentInChildren<CircleCollider2D>();
+        torchCollider.radius = 0f;
     }
 
     public bool IsInteracted() => interacted;
@@ -18,7 +21,8 @@ public class TorchController : MonoBehaviour
     public void ActivateTorch()
 {
     if (!interacted) {
-        torchLight.intensity = 1f;
+        torchLight.intensity = 1.5f;
+        torchCollider.radius = 1.2f;
         interacted = true;
         if(PlayerVision.Instance != null)
         {
