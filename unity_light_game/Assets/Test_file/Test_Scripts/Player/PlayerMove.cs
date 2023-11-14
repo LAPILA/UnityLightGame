@@ -33,6 +33,8 @@ public class PlayerMove : MonoBehaviour
     private float staminaRecoveryRate = 0.2f; // 스테미나 회복율
     private bool isRunning = false;
     private float lastTimeRunning;
+    //상호작용 관련 object
+    private MonsterChest dectectedChest;
 
 
     void Awake()
@@ -65,6 +67,12 @@ public class PlayerMove : MonoBehaviour
         // 횃불과 상호작용
         if (Input.GetKeyDown(KeyCode.Space) && detectedTorch != null) {
             InteractWithTorch();
+        }
+        //chestMob 상호작용
+        if (Input.GetKeyDown(KeyCode.Space) && dectectedChest != null)
+        {
+            Debug.Log("충돌인식");
+            InteractWithChestMob();
         }
 
     }
@@ -160,7 +168,12 @@ public class PlayerMove : MonoBehaviour
 
         if (rayHit.collider != null) {
             scanObject = rayHit.collider.gameObject;
-
+            // 상자 몬스터 객체 탐지 
+            MonsterChest chMob = scanObject.GetComponent<MonsterChest>();
+            if (chMob != null && !chMob.IsInteracted())
+            {
+                dectectedChest = chMob;
+            }
             // 토치 객체 탐지 로직
             TorchController hitTorch = scanObject.GetComponent<TorchController>();
             if (hitTorch != null && !hitTorch.IsInteracted()) {
@@ -169,6 +182,7 @@ public class PlayerMove : MonoBehaviour
         }
         else {
             detectedTorch = null;
+            dectectedChest = null;
         }
     }
 
@@ -185,6 +199,13 @@ public class PlayerMove : MonoBehaviour
             if (litTorches >= totalTorches) {
                 GameClear();
             }
+        }
+    }
+    void InteractWithChestMob()
+    {
+        if (dectectedChest != null && !dectectedChest.IsInteracted())
+        {
+            dectectedChest.ActivateChestMob();
         }
     }
 

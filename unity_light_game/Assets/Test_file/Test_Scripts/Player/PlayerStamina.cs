@@ -106,6 +106,6 @@ public class PlayerStamina : MonoBehaviour
     {
         // UI Scrollbar의 값을 업데이트하여 스태미나를 표시
         staminaScrollbar.size = currentStamina / maxStamina;
-        Debug.Log(staminaScrollbar.size);
+       // Debug.Log(staminaScrollbar.size);
     }
 }
