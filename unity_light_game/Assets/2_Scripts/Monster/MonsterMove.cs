@@ -11,26 +11,15 @@ public class MonsterMove : MonoBehaviour
     public float Speed = 3f;
     public float Recognition = 1f;
     public GameObject player;
-    public GameObject Panel;
-    public GameObject ReturnPlace;
-    public Game game;
-    private Transform MonsterTransform;
     private Rigidbody2D rigid;
-    private bool Runflag = false;
     Vector3 direction;
+    Vector3 Returnplace;
     Vector3 Returndir;
     void Start()
     {
-        
-        if (player == null)
-        {
-            player = GameObject.FindWithTag("Player");
-        }
-        if (Panel == null)
-        {
-            Panel = GameObject.FindWithTag("Panel");
-        }
         rigid = GetComponent<Rigidbody2D>();
+        Returnplace = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
 
 
     }
@@ -40,11 +29,12 @@ public class MonsterMove : MonoBehaviour
         direction = player.transform.position - transform.position;
         direction.Normalize();
     }
-    void Detectedmyself() {
-        DistanceReturn= Vector3.Distance(transform.position,ReturnPlace.transform.position);
-        Returndir = ReturnPlace.transform.position - transform.position;
+    void Detectedmyself()
+    {
+        DistanceReturn = Vector3.Distance(transform.position, Returnplace);
+        Returndir = Returnplace - transform.position;
         Debug.Log(DistanceReturn);
-        //Returndir.Normalize();
+        Returndir.Normalize();
     }
     void Move()
     {
@@ -54,19 +44,20 @@ public class MonsterMove : MonoBehaviour
         }
         else if (DistanceReturn > 0)
         {
-            transform.position += Returndir * Speed*0.5f* Time.deltaTime;
+            transform.position += Returndir * Speed * 0.5f * Time.deltaTime;
 
         }
-        else { rigid.velocity = Vector3.zero;}
+        else { rigid.velocity = Vector3.zero; }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == player)
         {
-            Panel.SetActive(true);
-            Time.timeScale = 0;
+            //Panel.SetActive(true);
+            //Time.timeScale = 0;
             //Debug.Log("Ãæµ¹");
         }
+        else { rigid.velocity = Vector3.zero; }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
