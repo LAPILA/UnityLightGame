@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd70991315f3a54cbbadd99ff7bce3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 1.5
   runMultiplier: 1.5
   torchCountText: {fileID: 0}
   staminaScrollbar: {fileID: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   breadSprite: {fileID: 21300000, guid: 8572701b6b7b29e46961009dc4ececb7, type: 3}
   glowBagSprite: {fileID: 21300000, guid: 38b9d5324da699048b0fa6502a65c981, type: 3}
   beaconSprite: {fileID: -1602209818, guid: da0d235fadf34254d97118b324c6b532, type: 3}
+  nullSprtie: {fileID: 21300000, guid: d49bb759164e73440ad2c82fc2dae078, type: 3}
   itemImageUI: {fileID: 0}
   itemCountUI: {fileID: 0}
 --- !u!1 &2417421424717403992
@@ -267,6 +268,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4056667947536775903}
   - component: {fileID: 1357118982771488851}
+  - component: {fileID: 9012321177383331680}
+  - component: {fileID: 8444480767312779645}
   m_Layer: 0
   m_Name: playerLight
   m_TagString: Untagged
@@ -305,8 +308,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8867924, g: 0.74038804, b: 0.74038804, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -327,8 +330,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.2
-  m_PointLightOuterRadius: 1
+  m_PointLightInnerRadius: 0.8
+  m_PointLightOuterRadius: 1.8
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -339,3 +342,52 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!58 &9012321177383331680
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417421424717403992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &8444480767312779645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417421424717403992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd5bea9ad142e241b05738fe2314e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light2d: {fileID: 1357118982771488851}
+  circleCollider: {fileID: 9012321177383331680}
