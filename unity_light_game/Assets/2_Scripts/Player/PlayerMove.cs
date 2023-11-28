@@ -168,6 +168,7 @@ public class PlayerMove : MonoBehaviour
 
         if (rayHit.collider != null) {
             scanObject = rayHit.collider.gameObject;
+            Debug.Log(scanObject);
             // 상자 몬스터 객체 탐지 
             MonsterChest chMob = scanObject.GetComponent<MonsterChest>();
             if (chMob != null && !chMob.IsInteracted())

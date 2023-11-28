@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7728614539022056085}
   - component: {fileID: -7068761920830183177}
   - component: {fileID: -1150021293901622902}
+  - component: {fileID: 8443814939682979472}
   m_Layer: 0
   m_Name: Monster_chest
   m_TagString: Untagged
@@ -69,7 +70,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.47619048, y: 0}
+    pivot: {x: 0.52380955, y: 0}
     oldSize: {x: 0.21, y: 0.17}
     newSize: {x: 0.21, y: 0.17}
     adaptiveTilingThreshold: 0.5
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5572423824831798546, guid: d80594886999c8b46ab8ce45ff517524, type: 3}
+  m_Sprite: {fileID: 7282340014418815500, guid: 3194f77297b7f524c876fe601b54ff9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,3 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b3ff9bafba6fd45a3e871fa8e51309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8443814939682979472
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486437456040170004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 5355080447098468248, guid: 015d559a3c84a244ca69218f054c446b, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
