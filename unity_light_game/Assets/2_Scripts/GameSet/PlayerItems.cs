@@ -6,6 +6,8 @@ using TMPro;
 
 public class PlayerItems : MonoBehaviour
 {
+    private static PlayerItems instance;
+
     public float glowBagDuration = 10f; // Inspector에서 수정 가능하도록 public으로 변경
     public float glowBagCooldown = 10f; // GlowBag 쿨타임 시간
     private float glowBagCooldownTime = 0f; // 쿨타임을 체크할 변수
@@ -48,9 +50,10 @@ public class PlayerItems : MonoBehaviour
     private void InitializeInventory()
     {
         // 시작 시 일부 아이템을 인벤토리에 추가
-        AddItem("Bread", 5); // 빵 5개 추가
-        AddItem("GlowBag", 2); // GlowBag 2개 추가
+        AddItem("Bread", 5); 
+        AddItem("GlowBag", 2);
         AddItem("Beacon", 3);
+
         if (items.Count > 0) {
             currentItemIndex = 0;
             currentItemKey = new List<string>(items.Keys)[currentItemIndex];

@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     // 횃불 개수에 관련된 변수들
     public TextMeshProUGUI torchCountText;
-    private int totalTorches = 8;
+    private int totalTorches = 9;
     private int litTorches = 0;
     private TorchController detectedTorch;
 
