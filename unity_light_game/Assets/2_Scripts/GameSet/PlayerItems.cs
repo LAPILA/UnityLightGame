@@ -49,11 +49,6 @@ public class PlayerItems : MonoBehaviour
 
     private void InitializeInventory()
     {
-        // 시작 시 일부 아이템을 인벤토리에 추가
-        AddItem("Bread", 5); 
-        AddItem("GlowBag", 2);
-        AddItem("Beacon", 3);
-
         if (items.Count > 0) {
             currentItemIndex = 0;
             currentItemKey = new List<string>(items.Keys)[currentItemIndex];
