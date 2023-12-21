@@ -80,8 +80,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -813146605, guid: a63548890dc7a67449d55fac7a708ece, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -1169104125, guid: 5de1453e1014c2a4a9be749d5d708724, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.26}
+    oldSize: {x: 0.2, y: 0.26}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   playerVision: {fileID: 5824451690624770964}
   breadSprite: {fileID: 21300000, guid: 8572701b6b7b29e46961009dc4ececb7, type: 3}
   glowBagSprite: {fileID: 21300000, guid: 38b9d5324da699048b0fa6502a65c981, type: 3}
-  beaconSprite: {fileID: -1602209818, guid: da0d235fadf34254d97118b324c6b532, type: 3}
+  beaconSprite: {fileID: 13920110, guid: 1084f41c917537544b652e61ddb255e1, type: 3}
   nullSprtie: {fileID: 21300000, guid: d49bb759164e73440ad2c82fc2dae078, type: 3}
   itemImageUI: {fileID: 0}
   itemCountUI: {fileID: 0}
