@@ -8,12 +8,10 @@ using UnityEngine.UI; // 스크롤바를 위해 필요
 
 public class PlayerMove : MonoBehaviour
 {
-    bool LastOn = false;
-    public bool lastgame = LastGame.GameStart;
     public static bool fisrtGame = false;
     // 플레이어 이동에 필요한 변수들
     public float Speed;
-    public float runMultiplier = 2f; // 달릴 때의 속도 배율
+    public float runMultiplier = 1.5f; // 달릴 때의 속도 배율
     private Rigidbody2D rigid;
     private Animator animator;
     private float h;
@@ -24,7 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     // 횃불 개수에 관련된 변수들
     public TextMeshProUGUI torchCountText;
-    int totalTorches = 9;
+    int totalTorches = 18;
     public static int litTorches = 0;
     private TorchController detectedTorch;
 
@@ -53,7 +51,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        PlayLast();
+        UpdateTorchCountText();
         // 사용자 입력 및 애니메이션
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -79,7 +77,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("충돌인식");
             InteractWithChestMob();
         }
-
+        Ending();
     }
 
 
@@ -213,24 +211,16 @@ public class PlayerMove : MonoBehaviour
             if (PlayerVision.Instance != null) {
                 PlayerVision.Instance.LightTorch();
             }
-            if (litTorches >= totalTorches) {
-                //마지막 방.
-                fisrtGame = true;
-            }
-            if(litTorches >= totalTorches && LastOn) {
-                Ending();
-            }
+            
         }
     }
-    void PlayLast()
-    {
-        if((litTorches >= totalTorches)&&lastgame) {
-            litTorches = 0;
-            Debug.Log("마지막 스테이지  활성화");
-        }
-        UpdateTorchCountText();
-        LastOn = true;
+  
 
+    void Ending()
+    {
+        if (litTorches >= totalTorches) {
+            SceneManager.LoadScene("GameClear");
+        }
     }
     void InteractWithChestMob()
     {
@@ -240,8 +230,4 @@ public class PlayerMove : MonoBehaviour
         }
     }
     
-    void Ending()
-    {
-        //엔딩관련 코드
-    }
 }

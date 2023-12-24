@@ -3,7 +3,7 @@ using System.Collections;
 public class Tutorial_wasd : MonoBehaviour
 {
     private Renderer objectRenderer;
-    private float fadeDuration = 4f;
+    private float fadeDuration = 2.5f;
 
     private void Start()
     {
