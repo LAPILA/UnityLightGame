@@ -98,7 +98,9 @@ public class Item_Once : MonoBehaviour
     void HandleImageDisplay()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            canvas.SetActive(false);
+            image1.SetActive(false);
+            image2.SetActive(false);
+            image3.SetActive(false);
             imagesShown = false;
             isPaused = false;
         }

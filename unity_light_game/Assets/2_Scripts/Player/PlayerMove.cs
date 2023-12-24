@@ -150,6 +150,22 @@ public class PlayerMove : MonoBehaviour
     void UpdateAnimation()
     {
         animator.SetBool("isWALK", Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f);
+
+        if (v > 0) // Moving up
+        {
+            animator.SetBool("isBack", true);
+            animator.SetBool("isFront", false);
+        }
+        else if (v < 0) // Moving down
+        {
+            animator.SetBool("isBack", false);
+            animator.SetBool("isFront", true);
+        }
+        else // Not moving vertically
+        {
+            animator.SetBool("isBack", false);
+            animator.SetBool("isFront", false);
+        }
     }
 
     // 캐릭터의 방향을 바꾸는 함수
