@@ -1,12 +1,16 @@
 using System.Collections;
 using TMPro;
 using Unity.Burst.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // 스크롤바를 위해 필요
 
 public class PlayerMove : MonoBehaviour
 {
+    bool LastOn = false;
+    public bool lastgame = LastGame.GameStart;
+    public static bool fisrtGame = false;
     // 플레이어 이동에 필요한 변수들
     public float Speed;
     public float runMultiplier = 2f; // 달릴 때의 속도 배율
@@ -20,8 +24,8 @@ public class PlayerMove : MonoBehaviour
 
     // 횃불 개수에 관련된 변수들
     public TextMeshProUGUI torchCountText;
-    private int totalTorches = 9;
-    private int litTorches = 0;
+    int totalTorches = 9;
+    public static int litTorches = 0;
     private TorchController detectedTorch;
 
     // 스테미나 관련 변수들
@@ -49,11 +53,12 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        PlayLast();
         // 사용자 입력 및 애니메이션
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         dirVec = new Vector3(h, v, 0).normalized;
-
+        
         UpdateRunningStatus();
         UpdateAnimation();
         FlipCharacter();
@@ -76,6 +81,7 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
+
 
     private void FixedUpdate()
     {
@@ -139,12 +145,6 @@ public class PlayerMove : MonoBehaviour
         torchCountText.text = $"남은 Torch: {totalTorches - litTorches}";
     }
 
-    // 게임 클리어시 실행되는 함수
-    void GameClear()
-    {
-        Debug.Log("게임 클리어!");
-        SceneManager.LoadScene("GameClear");
-    }
 
     // 애니메이션을 업데이트하는 함수
     void UpdateAnimation()
@@ -214,9 +214,23 @@ public class PlayerMove : MonoBehaviour
                 PlayerVision.Instance.LightTorch();
             }
             if (litTorches >= totalTorches) {
-                GameClear();
+                //마지막 방.
+                fisrtGame = true;
+            }
+            if(litTorches >= totalTorches && LastOn) {
+                Ending();
             }
         }
+    }
+    void PlayLast()
+    {
+        if((litTorches >= totalTorches)&&lastgame) {
+            litTorches = 0;
+            Debug.Log("마지막 스테이지  활성화");
+        }
+        UpdateTorchCountText();
+        LastOn = true;
+
     }
     void InteractWithChestMob()
     {
@@ -225,5 +239,9 @@ public class PlayerMove : MonoBehaviour
             dectectedChest.ActivateChestMob();
         }
     }
-
+    
+    void Ending()
+    {
+        //엔딩관련 코드
+    }
 }

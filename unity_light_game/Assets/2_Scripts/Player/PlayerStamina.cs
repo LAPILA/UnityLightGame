@@ -10,7 +10,7 @@ public class PlayerStamina : MonoBehaviour
     public float staminaDecreaseRate = 0; // 초당 스태미나 감소율
     public float staminaIncreaseRate = 100f; // 초당 스태미나 회복율
     public float decreaseInterval = 1f; // 스태미나 감소 간격
-    public float decreaseDelay = 1.5f; // 스태미나 감소 딜레이
+    public float decreaseDelay = 1.2f; // 스태미나 감소 딜레이
     public float increaseDelay = 0.5f; // 스태미나 회복 딜레이
     public Light2D playerLight; // 플레이어 Light2D
     public Scrollbar staminaScrollbar; // UI Scrollbar
