@@ -9,8 +9,10 @@ public class Item_Big : MonoBehaviour
     SpriteRenderer spriteRenderer;
     PlayerItems playerItems;
     public Sprite openedBoxSprite;
+    AudioSource audioSource;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerItems = GameObject.Find("player").GetComponent<PlayerItems>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null) {
@@ -23,6 +25,7 @@ public class Item_Big : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && canInteract && ItemOn) {
             AddRandomItem();
+            audioSource.Play();
         }
     }
 

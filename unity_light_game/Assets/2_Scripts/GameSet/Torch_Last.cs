@@ -1,17 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Torch_Last : MonoBehaviour
 {
-    int torch = PlayerMove.litTorches;
+    AudioSource audioSource;
+    int torch;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         torch = PlayerMove.litTorches;
-        if (torch>=9) {
-            gameObject.SetActive(false);
-        }
 
+        if (torch >= 9) {
+            audioSource.Play();
+            Invoke("DeactivateObject", 2f); // 2초 뒤에 DeactivateObject 함수 호출
+        }
+    }
+
+    void DeactivateObject()
+    {
+        gameObject.SetActive(false); // 2초 뒤에 현재 게임 오브젝트 비활성화
     }
 }

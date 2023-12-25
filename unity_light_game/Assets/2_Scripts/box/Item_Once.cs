@@ -17,9 +17,11 @@ public class Item_Once : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private PlayerItems playerItems;
     public Sprite openedBoxSprite;
+    AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         InitializeComponents();
         DeactivateImages();
     }
@@ -27,6 +29,7 @@ public class Item_Once : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && canInteract && itemOn) {
+            audioSource.Play();
             AddRandomItem();
         }
 

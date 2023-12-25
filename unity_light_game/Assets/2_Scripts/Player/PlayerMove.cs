@@ -18,7 +18,9 @@ public class PlayerMove : MonoBehaviour
     private float v;
     private Vector3 dirVec;
     private GameObject scanObject;
+    GameObject canvasObject;
     private Vector3 lastMoveDir;
+    AudioSource audioSource;
 
     // 횃불 개수에 관련된 변수들
     public TextMeshProUGUI torchCountText;
@@ -38,9 +40,14 @@ public class PlayerMove : MonoBehaviour
     //상호작용 관련 object
     private MonsterChest dectectedChest;
 
-
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Awake()
     {
+        
+        canvasObject = canvasObject = GameObject.Find("PlayerUI");
         // 초기화
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -214,14 +221,24 @@ public class PlayerMove : MonoBehaviour
             
         }
     }
-  
+
 
     void Ending()
     {
         if (litTorches >= totalTorches) {
-            SceneManager.LoadScene("GameClear");
+            StartCoroutine(WaitAndLoadScene());
         }
     }
+
+    IEnumerator WaitAndLoadScene()
+    {
+        audioSource.Play(); // 오디오 재생
+
+        yield return new WaitForSeconds(12f); // 12초 대기
+
+        SceneManager.LoadScene("GameClear"); // 다음 씬으로 이동
+    }
+
     void InteractWithChestMob()
     {
         if (dectectedChest != null && !dectectedChest.IsInteracted())
