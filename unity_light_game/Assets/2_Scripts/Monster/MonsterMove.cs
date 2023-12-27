@@ -77,8 +77,8 @@ public class MonsterMove : MonoBehaviour
         if (collision.gameObject == player)
         {
             //Panel.SetActive(true);
-            //Time.timeScale = 0;
-            //Debug.Log("충돌");
+            Time.timeScale = 0;
+            Debug.Log("충돌");
         }
         else { rigid.velocity = Vector3.zero; }
     }

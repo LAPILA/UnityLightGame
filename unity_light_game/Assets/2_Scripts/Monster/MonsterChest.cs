@@ -8,9 +8,14 @@ public class MonsterChest : MonoBehaviour
     private int count = 0;
     private float time = 0;
     private Animator animator;
+    public Game game;
     void Start()
     {
         animator = GetComponent<Animator>();
+        if (game == null)
+        {
+            game = FindObjectOfType<Game>();
+        }
     }
     public void SetInteracted(bool flag) { Interacted = flag; }
     public bool IsInteracted() { return Interacted; }
@@ -22,7 +27,9 @@ public class MonsterChest : MonoBehaviour
     public void TransUpdate() {
 
         if (Interacted && count == 0)
+
         {
+            Debug.Log("Ãæµ¹");
             animator.SetBool("IsATT", Interacted);
             count = 1;
         }
@@ -37,7 +44,7 @@ public class MonsterChest : MonoBehaviour
             }
         }
         else if (count == 10) {
-
+            game.GameOver();
             count = 0;
             time = 0;
             Interacted = false;

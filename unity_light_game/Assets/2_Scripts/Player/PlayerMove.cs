@@ -39,10 +39,15 @@ public class PlayerMove : MonoBehaviour
     private float lastTimeRunning;
     //상호작용 관련 object
     private MonsterChest dectectedChest;
+    //게임오버, 부활 관련 조정 오브젝트 
+    public Game game;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        if (game == null) {
+            game = FindObjectOfType<Game>();
+        }
     }
     void Awake()
     {
@@ -57,6 +62,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     private void Update()
+            
     {
         UpdateTorchCountText();
         // 사용자 입력 및 애니메이션
@@ -84,6 +90,16 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("충돌인식");
             InteractWithChestMob();
         }
+        if (Input.GetKeyDown(KeyCode.V)) {
+            game.ReGame();
+            //Time.timeScale = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            game.GameOver();
+            //Time.timeScale = 0;
+        }
+
         Ending();
     }
 
@@ -189,7 +205,7 @@ public class PlayerMove : MonoBehaviour
 
         if (rayHit.collider != null) {
             scanObject = rayHit.collider.gameObject;
-            Debug.Log(scanObject);
+            //Debug.Log(scanObject);
             // 상자 몬스터 객체 탐지 
             MonsterChest chMob = scanObject.GetComponent<MonsterChest>();
             if (chMob != null && !chMob.IsInteracted())
@@ -200,6 +216,7 @@ public class PlayerMove : MonoBehaviour
             TorchController hitTorch = scanObject.GetComponent<TorchController>();
             if (hitTorch != null && !hitTorch.IsInteracted()) {
                 detectedTorch = hitTorch;
+                game.SetReturn(new Vector3(hitTorch.transform.position.x, hitTorch.transform.position.y, hitTorch.transform.position.z));
             }
         }
         else {
