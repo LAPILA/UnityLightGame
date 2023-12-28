@@ -14,10 +14,10 @@ public class Monster_Hide : MonoBehaviour
 
     void Update()
     {
-        // 플레이어가 범위 안에 있고, 1초 이상 있었을 경우 게임 오버
+        // 플레이어가 범위 안에 있고, 0.5초 이상 있었을 경우 게임 오버
         if (playerInArea) {
             timeInArea += Time.deltaTime;
-            if (timeInArea >= 1.0f) {
+            if (timeInArea >= 0.5f) {
                 GameOver();
             }
         }
