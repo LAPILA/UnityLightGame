@@ -19,6 +19,7 @@ public class MonsterMove : MonoBehaviour
     Vector3 Returnplace;
     Vector3 Returndir;
     AudioSource audioSource;
+    public Game game;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -77,7 +78,7 @@ public class MonsterMove : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            //Panel.SetActive(true);
+            game.GameOver();
             Time.timeScale = 0;
             Debug.Log("Ãæµ¹");
         }

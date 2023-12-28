@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DistancePlayer: 0
   DistanceReturn: 0
-  Speed: 1
+  Speed: 0.5
   Recognition: 1
   IsWalk: 0
   IsReturn: 0
