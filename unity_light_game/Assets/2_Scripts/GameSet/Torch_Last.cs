@@ -17,7 +17,7 @@ public class Torch_Last : MonoBehaviour
 
         if (torch >= 9) {
             audioSource.Play();
-            Invoke("DeactivateObject", 2f); // 2초 뒤에 DeactivateObject 함수 호출
+            Invoke("DeactivateObject", 4f); // 2초 뒤에 DeactivateObject 함수 호출
         }
     }
 

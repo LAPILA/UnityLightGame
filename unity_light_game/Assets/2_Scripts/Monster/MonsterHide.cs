@@ -5,57 +5,72 @@ public class MonsterHide : MonoBehaviour
 {
     [SerializeField] CircleCollider2D Light_radius; // 플레이어의 빛 감지 콜라이더
     [SerializeField] BoxCollider2D Monster_box; // 몬스터의 콜라이더
-    [SerializeField] BoxCollider2D AttackRangeCollider; // 공격 범위 콜라이더
+    [SerializeField] GameObject AttackRange; // 공격 범위를 나타내는 게임 오브젝트
 
     private bool isInLight = false; // 빛에 노출되었는지 여부
     private bool isAttacking = false; // 공격 중인지 여부
+    private float lightExposureTime = 0f; // 빛에 노출된 시간
 
     private Animator animator; // 몬스터의 애니메이터
+    AudioSource audioSource;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>(); // 애니메이터 가져오기
-        AttackRangeCollider.enabled = false; // AttackRange Collider 초기에 비활성화
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+
+        if (AttackRange != null) {
+            AttackRange.SetActive(false); // 공격 범위 오브젝트 초기에 비활성화
+        }
     }
 
     private void Update()
     {
-        if (isAttacking) {
+        if (isInLight) {
+            lightExposureTime += Time.deltaTime;
+            if (lightExposureTime >= 2f && !isAttacking) {
+                StartAttack();
+            }
+        }
+        else {
+            lightExposureTime = 0f;
+            if (isAttacking) {
+                StopAttack();
+            }
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other == Light_radius) {
-            isInLight = true; // 빛에 노출됨
-            StartAttack(); // 공격 시작
+            isInLight = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other == Light_radius) {
-            isInLight = false; // 빛에서 벗어남
-            StopAttack(); // 공격 중지
+            isInLight = false;
         }
     }
 
     private void StartAttack()
     {
-        isAttacking = true; // 공격 상태로 변경
-        animator.SetBool("isAttacking", true); // 애니메이션 상태 변경
+        isAttacking = true;
+        animator.SetBool("isAttacking", true);
+        audioSource.Play();
+        if (AttackRange != null) {
+            AttackRange.SetActive(true); // 공격 범위 오브젝트 활성화
+        }
     }
 
     private void StopAttack()
     {
-        isAttacking = false; // 공격 종료
-        animator.SetBool("isAttacking", false); // 애니메이션 상태 변경
+        isAttacking = false;
+        animator.SetBool("isAttacking", false);
+        if (AttackRange != null) {
+            AttackRange.SetActive(false); // 공격 범위 오브젝트 비활성화
+        }
     }
 
-    private void GameOver()
-    {
-        Debug.Log("게임 오버!"); // 여기에 게임 오버 로직을 추가하세요
-        // 게임 오버 처리 등의 코드를 작성하세요
-    }
 }
