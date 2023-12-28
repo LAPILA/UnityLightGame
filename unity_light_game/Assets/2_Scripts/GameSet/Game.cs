@@ -14,7 +14,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         if (player != null) {
-            player = GameObject.FindWithTag("player");
+            player = GameObject.FindWithTag("Player");
         }
         Panel.SetActive(false);
     }

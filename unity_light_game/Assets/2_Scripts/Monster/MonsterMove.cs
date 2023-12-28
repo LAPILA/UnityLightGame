@@ -18,13 +18,13 @@ public class MonsterMove : MonoBehaviour
     Vector3 direction;
     Vector3 Returnplace;
     Vector3 Returndir;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rigid = GetComponent<Rigidbody2D>();
         Returnplace = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         animator = GetComponent<Animator>();
-
-
 
     }
     void DetectedPlayer()
@@ -70,6 +70,7 @@ public class MonsterMove : MonoBehaviour
             if (Returndir.x < 0) { transform.localScale = new Vector3(-0.6f, 0.6f, 1); }
             else { transform.localScale = new Vector3(0.6f, 0.6f, 1); }
         }
+        audioSource.Play();
         animator.SetBool("isWALK",IsWalk);
     }
     private void OnCollisionEnter2D(Collision2D collision)

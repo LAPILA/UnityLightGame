@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 387
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7081bcaa2b7a843b4f7561d9769917
+      internalID: -511267414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2381
+        y: 0
+        width: 439
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905e83235decd264eaefcabf6c107bae
+      internalID: -1941292688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 4273
+        y: 0
+        width: 336
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22240429dc665394eb2a32b564416783
+      internalID: -1560864649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 6121
+        y: 0
+        width: 344
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e073b64eb33c4f41947186200290203
+      internalID: -19692828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 8013
+        y: 0
+        width: 351
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bfb255b61ada44496584172d408b61
+      internalID: -1709906399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 9927
+        y: 0
+        width: 387
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d6c01d81d18ed4db5e8062d7467a71
+      internalID: -1792051946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 11863
+        y: 0
+        width: 314
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be0afa68ee9e5c4bbd54552e3183def
+      internalID: -1423040653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specimen_walk_attack-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 13791
+        y: 0
+        width: 322
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ddaffd14d59574abd818d5307037a5
+      internalID: -1249469193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +300,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      specimen_walk_attack-Sheet_0: -511267414
+      specimen_walk_attack-Sheet_1: -1941292688
+      specimen_walk_attack-Sheet_2: -1560864649
+      specimen_walk_attack-Sheet_3: -19692828
+      specimen_walk_attack-Sheet_4: -1709906399
+      specimen_walk_attack-Sheet_5: -1792051946
+      specimen_walk_attack-Sheet_6: -1423040653
+      specimen_walk_attack-Sheet_7: -1249469193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
