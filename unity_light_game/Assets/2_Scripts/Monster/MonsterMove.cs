@@ -56,6 +56,7 @@ public class MonsterMove : MonoBehaviour
 
         }
         else {
+            audioSource.Stop();
             IsWalk = false;
             IsReturn = false;
             rigid.velocity = Vector3.zero;

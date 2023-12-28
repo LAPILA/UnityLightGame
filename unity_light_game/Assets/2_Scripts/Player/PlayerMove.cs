@@ -41,9 +41,10 @@ public class PlayerMove : MonoBehaviour
     private MonsterChest dectectedChest;
     //게임오버, 부활 관련 조정 오브젝트 
     public Game game;
-
+    private bool isAudioPlaying = false;
     private void Start()
     {
+        isAudioPlaying = false;
         audioSource = GetComponent<AudioSource>();
         if (game == null) {
             game = FindObjectOfType<Game>();
@@ -62,21 +63,22 @@ public class PlayerMove : MonoBehaviour
     }
 
     private void Update()
-            
     {
         UpdateTorchCountText();
         // 사용자 입력 및 애니메이션
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         dirVec = new Vector3(h, v, 0).normalized;
-        
+        bool isMoving = h != 0 || v != 0;
+
         UpdateRunningStatus();
         UpdateAnimation();
         FlipCharacter();
-        if (h != 0 || v != 0) // 움직임이 있는 경우에만 dirVec를 업데이트
-    {
+        ControlAudioPlayback(isMoving);
+
+        if (isMoving) {
             dirVec = new Vector3(h, v, 0).normalized;
-            lastMoveDir = dirVec; // 플레이어가 움직이는 동안에는 이 방향을 계속 갱신
+            lastMoveDir = dirVec;
         }
         DetectObjects();
 
@@ -104,12 +106,31 @@ public class PlayerMove : MonoBehaviour
         rigid.velocity = dirVec * (isRunning ? Speed * runMultiplier : Speed);
         DetectObjects();
     }
+
+    void ControlAudioPlayback(bool isMoving)
+    {
+        if (isMoving) {
+            if (!isAudioPlaying) {
+                audioSource.Play();
+                isAudioPlaying = true;
+            }
+        }
+        else {
+            if (isAudioPlaying) {
+                audioSource.Stop();
+                isAudioPlaying = false;
+            }
+        }
+    }
+
     void UpdateRunningStatus()
     {
         if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0) {
+            audioSource.pitch = 1.3f;
             StartRunning();
         }
         else {
+            audioSource.pitch = 0.8f;
             StopRunning();
         }
 
@@ -243,9 +264,7 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator WaitAndLoadScene()
     {
-        audioSource.Play(); // 오디오 재생
-
-        yield return new WaitForSeconds(12f); // 12초 대기
+        yield return new WaitForSeconds(2f); 
 
         SceneManager.LoadScene("GameClear"); // 다음 씬으로 이동
     }

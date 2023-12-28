@@ -8,7 +8,6 @@ public class TorchController : MonoBehaviour
     private bool interacted = false;
     private CircleCollider2D torchCollider;
     AudioSource audioSource;
-    public Game game;
 
     private void Start()
     {
