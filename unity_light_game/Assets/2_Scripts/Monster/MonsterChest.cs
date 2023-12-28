@@ -9,8 +9,10 @@ public class MonsterChest : MonoBehaviour
     private float time = 0;
     private Animator animator;
     public Game game;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         if (game == null)
         {
@@ -29,7 +31,9 @@ public class MonsterChest : MonoBehaviour
         if (Interacted && count == 0)
 
         {
+
             Debug.Log("Ãæµ¹");
+            audioSource.Play();
             animator.SetBool("IsATT", Interacted);
             count = 1;
         }
