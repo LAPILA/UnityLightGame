@@ -126,12 +126,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_0
       rect:
         serializedVersion: 2
-        x: 402
+        x: 410
         y: 0
-        width: 387
+        width: 370
         height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 2381
+        x: 2390
         y: 0
-        width: 439
-        height: 625
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 420
+        height: 620
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_2
       rect:
         serializedVersion: 2
-        x: 4273
+        x: 4280
         y: 0
-        width: 336
-        height: 589
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 320
+        height: 580
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_3
       rect:
         serializedVersion: 2
-        x: 6121
+        x: 6130
         y: 0
-        width: 344
+        width: 330
         height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_4
       rect:
         serializedVersion: 2
-        x: 8013
+        x: 8020
         y: 0
-        width: 351
+        width: 340
         height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_5
       rect:
         serializedVersion: 2
-        x: 9927
+        x: 9930
         y: 0
-        width: 387
-        height: 625
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 380
+        height: 620
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_6
       rect:
         serializedVersion: 2
-        x: 11863
+        x: 11870
         y: 0
-        width: 314
-        height: 604
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 300
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: specimen_walk_attack-Sheet_7
       rect:
         serializedVersion: 2
-        x: 13791
+        x: 13800
         y: 0
-        width: 322
+        width: 310
         height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
