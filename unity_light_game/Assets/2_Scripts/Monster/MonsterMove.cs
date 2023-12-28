@@ -44,7 +44,6 @@ public class MonsterMove : MonoBehaviour
     {
         if (DistancePlayer < Recognition)
         {
-            audioSource.Play();
             IsWalk = true;
             IsReturn = false;
             transform.position += direction * Speed * Time.deltaTime;
@@ -56,7 +55,7 @@ public class MonsterMove : MonoBehaviour
 
         }
         else {
-            audioSource.Stop();
+            
             IsWalk = false;
             IsReturn = false;
             rigid.velocity = Vector3.zero;
