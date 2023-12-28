@@ -12,11 +12,9 @@ public class MonsterHide : MonoBehaviour
     private float lightExposureTime = 0f; // 빛에 노출된 시간
 
     private Animator animator; // 몬스터의 애니메이터
-    AudioSource audioSource;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         if (AttackRange != null) {
@@ -58,7 +56,6 @@ public class MonsterHide : MonoBehaviour
     {
         isAttacking = true;
         animator.SetBool("isAttacking", true);
-        audioSource.Play();
         if (AttackRange != null) {
             AttackRange.SetActive(true); // 공격 범위 오브젝트 활성화
         }

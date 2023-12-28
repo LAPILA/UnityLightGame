@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject player;
+    public GameObject song;
     public bool IsPause = false;
     public bool Gameover = false;
     public Vector3 ReturnPlace;
@@ -43,14 +44,22 @@ public class Game : MonoBehaviour
     public void GameOver()
     {
         Gameover = true;
-        StopAllAudioSources(); // 모든 사운드 멈추기
+        StopAllAudioSources();
     }
 
     public void ReGame()
     {
         Gameover = false;
         player.transform.position = ReturnPlace;
-        GetAllAudioSources(); // 모든 AudioSource 다시 가져오기
+        GetAllAudioSources(); 
+
+        AudioSource songAudioSource = song.GetComponent<AudioSource>();
+
+        if (songAudioSource != null) {
+            songAudioSource.Stop(); // 먼저 중지
+            songAudioSource.Play(); // 재시작
+            songAudioSource.loop = true; // 루프 설정
+        }
     }
 
     public void SetReturn(Vector3 Place)
@@ -58,17 +67,20 @@ public class Game : MonoBehaviour
         ReturnPlace = Place;
     }
 
-    // Update is called once per frame
+    // Update 함수를 사용하여 게임 전체를 정지시킵니다.
     void Update()
     {
         if (Gameover) {
-            Panel.SetActive(true);
             Time.timeScale = 0;
+            Panel.SetActive(true);
+            Debug.Log("게임오버");
         }
         else {
             Panel.SetActive(false);
+            Debug.Log("재시작");
+            
             Time.timeScale = 1;
         }
-        //Debug.Log(ReturnPlace);
     }
+
 }

@@ -90,14 +90,8 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("충돌인식");
             InteractWithChestMob();
         }
-        if (Input.GetKeyDown(KeyCode.V)) {
+        if (Input.GetKeyDown(KeyCode.V)&&game.Gameover) {
             game.ReGame();
-            //Time.timeScale = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            game.GameOver();
-            //Time.timeScale = 0;
         }
 
         Ending();
